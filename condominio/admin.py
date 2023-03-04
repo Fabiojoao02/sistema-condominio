@@ -31,7 +31,7 @@ class MoradorAdmin(admin.ModelAdmin):
     def nome_bloco(self, obj):
         return obj.bloco.nome
 
-    list_display = ['nome', 'cpf', 'telefone',
+    list_display = ['nome', 'apto_sala', 'cpf', 'telefone',
                     'email', 'estado', 'nome_bloco']
 
 

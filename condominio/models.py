@@ -116,6 +116,7 @@ class Bloco(models.Model):
 class Morador(models.Model):
     bloco = models.ForeignKey(Bloco, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
+    apto_sala = models.CharField(max_length=50)
     telefone = models.CharField(max_length=20)
     email = models.CharField(max_length=80)
     situacao = models.CharField(max_length=1, default='A', editable=False)
