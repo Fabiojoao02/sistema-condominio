@@ -9,7 +9,7 @@ class BlocoInLine(admin.TabularInline):
 
 class CondominioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'Cidade', 'Estado',
-                    'Bairro', 'Fracao_ideal_tem']
+                    'Bairro', 'Fracao_ideal_tem', 'get_Taxa_condominio', 'get_Fundo_reserva']
     inlines = [
         BlocoInLine
     ]

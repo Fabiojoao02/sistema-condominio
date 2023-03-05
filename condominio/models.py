@@ -60,6 +60,14 @@ class Condominio(models.Model):
     Foto = models.ImageField(
         upload_to='condominio_imagens', blank=True, null=True)
 
+    def get_Taxa_condominio(self):
+        return f' {self.Taxa_condominio:.2f}%'.replace('.', ',')
+    get_Taxa_condominio.short_description = 'Tx Condominio'
+
+    def get_Fundo_reserva(self):
+        return f' {self.Fundo_reserva:.2f}%'.replace('.', ',')
+    get_Fundo_reserva.short_description = 'Fundo Reserva'
+
     @staticmethod
     def resize_image(img, new_width=800):
         img_full_path = os.path.join(settings.MEDIA_ROOT, img.name)
