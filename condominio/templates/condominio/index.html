@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Endereco</th>
             <th>Cidade</th>
@@ -16,6 +17,7 @@
     <tbody>
         {% for condominio in condominios %}
         <tr>
+            <td>{{ condominio.id }}</td>
             <td>
                 <a href="{% url 'ver_condo' condominio.id %}">{{ condominio.nome }}</a>
             </td>
@@ -26,5 +28,24 @@
         {% endfor %}
     </tbody>
 </table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% for pagina in condominios.paginator.page_range %}
+        {% if condominios.number == pagina %}
+        <li class="page-item active">
+            <a class="page-link" href="?p={{ pagina }}&termo={{ request.GET.termo }}">{{pagina}}
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="?p={{ pagina }}">
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
 
 {% endblock %}

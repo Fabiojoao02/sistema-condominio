@@ -59,6 +59,7 @@ class Condominio(models.Model):
     )
     Foto = models.ImageField(
         upload_to='condominio_imagens', blank=True, null=True)
+    mostrar = models.BooleanField(default=True)
 
     def get_Taxa_condominio(self):
         return f' {self.Taxa_condominio:.2f}%'.replace('.', ',')

@@ -3,6 +3,12 @@
 {% block conteudo %}
 
 <h1 class="mt-5">{{ condominio.nome }}</h1>
+{% if condominio.Foto %}
+<p>
+    <img scr="{{ condominio.Foto.url }}" style="max-width: 250px; height: auto;">
+</p>
+{% endif %}
+
 <dl>
     <dt>ID</dt>
     <dd>{{ condominio.id }}</dd>
