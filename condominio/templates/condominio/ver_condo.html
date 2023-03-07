@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1 class="mt-5">{{ condominio.nome }}</h1>
+<dl>
+    <dt>ID</dt>
+    <dd>{{ condominio.id }}</dd>
+
+    <dt>Endereço</dt>
+    <dd>{{condominio.Endereço}}</dd>
+
+    <dt>Cidade</dt>
+    <dd>{{condominio.Cidade}}</dd>
+
+    <dt>Estado</dt>
+    <dd>{{condominio.Estado}}</dd>
+
+    <dt>Bairro</dt>
+    <dd>{{condominio.Bairro}}</dd>
+
+    <dt>CEP</dt>
+    <dd>{{condominio.CEP}}</dd>
+
+    <dt>Tx. Condominio</dt>
+    <dd>{{condominio.Taxa_condominio}}</dd>
+
+    <dt>Fundo Reserva</dt>
+    <dd>{{condominio.fundo_reserva}}</dd>
+
+    <dt>Fração ideal</dt>
+    <dd>{{condominio.Fracao_ideal_tem}}</dd>
+</dl>
+
+
+{% endblock %}

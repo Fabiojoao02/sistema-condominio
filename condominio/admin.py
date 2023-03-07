@@ -10,6 +10,10 @@ class BlocoInLine(admin.TabularInline):
 class CondominioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'Cidade', 'Estado',
                     'Bairro', 'Fracao_ideal_tem', 'get_Taxa_condominio', 'get_Fundo_reserva']
+    # list_display_links = ['nome', 'Cidade', 'Estado']
+    # list_filter = ['nome', 'Cidade', 'Estado']
+    list_per_page = 10  # lista 10 registrod=s na pagina
+    search_fields = ['nome', 'Cidade', 'Estado']
     inlines = [
         BlocoInLine
     ]

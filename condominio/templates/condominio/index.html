@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1 class="mt-5">Condomínio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Endereco</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for condominio in condominios %}
+        <tr>
+            <td>
+                <a href="{% url 'ver_condo' condominio.id %}">{{ condominio.nome }}</a>
+            </td>
+            <td>{{ condominio.Endereco }}</td>
+            <td>{{ condominio.Cidade }}</td>
+            <td>{{ condominio.Estado }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
