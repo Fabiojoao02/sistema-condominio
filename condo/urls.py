@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from django.conf import settings
 from django.conf.urls.static import static
+
+LOGIN_URL = '/admin/login/'
 
 urlpatterns = [
     path('', include('condominio.urls')),

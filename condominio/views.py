@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_list_or_404, redirect
 from django.views.generic.list import ListView
 from django.views import View
 from django.http import HttpResponse
@@ -7,6 +7,7 @@ from .models import Condominio
 from django.core.paginator import Paginator
 from django.db.models import Q, Value
 from django.db.models.functions import Concat
+from django.contrib import messages
 
 
 def index(request):
@@ -37,7 +38,17 @@ def ver_condo(request, condominio_id):
 def busca(request):
     termo = request.GET.get('termo')
     if termo is None or not termo:
-        raise Http404
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'Campo termo não pode ficar vazio'
+        )
+        # messages.add_message(
+        #     request,
+        #     messages.SUCCESS,
+        #     'Menssagem de sucesso'
+        # )
+        return redirect('indexs')
 
     campos = Concat('nome', Value(' '), 'Endereco')
 
