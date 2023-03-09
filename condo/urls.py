@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 LOGIN_URL = '/admin/login/'
 
 urlpatterns = [
-    path('', include('condominio.urls')),
-    path('perfil/', include('perfil.urls')),
-    path('contas/', include('contas.urls')),
-    path('leituras/', include('leituras.urls')),
+    # path('', include('condominio.urls')),
+    # path('perfil/', include('perfil.urls')),
+    # path('contas/', include('contas.urls')),
+    # path('leituras/', include('leituras.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -11,17 +11,19 @@ from django.contrib import messages
 
 
 def index(request):
-    condominios = Condominio.objects.order_by('-id').filter(
-        mostrar=True
-    )  # -nomeordem decrescente
-    paginator = Paginator(condominios, 10)  # Show 10 contacts per page.
+    return render(request, 'admin/')
 
-    page = request.GET.get('p')
-    condominios = paginator.get_page(page)
+    # condominios = Condominio.objects.order_by('-id').filter(
+    # mostrar=True
+    # )  # -nomeordem decrescente
+    # paginator = Paginator(condominios, 10)  # Show 10 contacts per page.
 
-    return render(request, 'condominio/index.html', {
-        'condominios': condominios
-    })
+    # page = request.GET.get('p')
+    # condominios = paginator.get_page(page)
+
+    # return render(request, 'condominio/index.html', {
+    # 'condominios': condominios
+    # })
 
 
 def ver_condo(request, condominio_id):

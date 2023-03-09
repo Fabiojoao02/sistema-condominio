@@ -120,7 +120,15 @@ LANGUAGE_CODE = 'pt-BR'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
+# DATE_FORMAT = 'd/m/Y'
+
+# DATA_INPUT_FORMATS = (
+#    '%d/%m/%Y',
+# )
+
 USE_I18N = True
+
+# USE_L10N = False
 
 USE_TZ = True
 
@@ -156,6 +164,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 # Salvar a cada requisição
 SESSION_SAVE_EVERY_REQUEST = False
+
 
 # Serializer - Padrão JSON
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
