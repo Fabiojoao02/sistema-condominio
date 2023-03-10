@@ -21,7 +21,9 @@ from django.conf.urls.static import static
 LOGIN_URL = '/admin/login/'
 
 urlpatterns = [
-    # path('', include('condominio.urls')),
+    path('', include('condominio.urls')),
+    path('accounts/', include('accounts.urls')),
+
     # path('perfil/', include('perfil.urls')),
     # path('contas/', include('contas.urls')),
     # path('leituras/', include('leituras.urls')),
