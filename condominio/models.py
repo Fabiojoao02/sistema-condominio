@@ -47,8 +47,6 @@ class Condominio(models.Model):
             ('TO', 'Tocantins'),
         )
     )
-    Taxa_condominio = models.FloatField(default=0)
-    Fundo_reserva = models.FloatField(default=0)
     Fracao_ideal_tem = models.CharField(
         max_length=1,
         choices=(
@@ -60,14 +58,6 @@ class Condominio(models.Model):
     Foto = models.ImageField(
         upload_to='condominio_imagens', blank=True, null=True)
     mostrar = models.BooleanField(default=True)
-
-    def get_Taxa_condominio(self):
-        return f' {self.Taxa_condominio:.2f}%'.replace('.', ',')
-    get_Taxa_condominio.short_description = 'Tx Condominio'
-
-    def get_Fundo_reserva(self):
-        return f' {self.Fundo_reserva:.2f}%'.replace('.', ',')
-    get_Fundo_reserva.short_description = 'Fundo Reserva'
 
     @staticmethod
     def resize_image(img, new_width=800):
@@ -113,6 +103,16 @@ class Bloco(models.Model):
     condominio = models.ForeignKey(Condominio, on_delete=models.CASCADE)
     nome = models.CharField(max_length=150)
     situacao = models.CharField(max_length=1, default='A', editable=False)
+    Taxa_condominio = models.FloatField(default=0)
+    Fundo_reserva = models.FloatField(default=0)
+
+    def get_Taxa_condominio(self):
+        return f' {self.Taxa_condominio:.2f}%'.replace('.', ',')
+    get_Taxa_condominio.short_description = 'Tx Condominio'
+
+    def get_Fundo_reserva(self):
+        return f' {self.Fundo_reserva:.2f}%'.replace('.', ',')
+    get_Fundo_reserva.short_description = 'Fundo Reserva'
 
     def __str__(self) -> str:
         return self.nome or self.condominio.nome

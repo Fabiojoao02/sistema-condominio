@@ -9,7 +9,7 @@ class BlocoInLine(admin.TabularInline):
 
 class CondominioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'Cidade', 'Estado',
-                    'Bairro', 'Fracao_ideal_tem', 'get_Taxa_condominio', 'get_Fundo_reserva', 'mostrar']
+                    'Bairro', 'Fracao_ideal_tem',  'mostrar']
     # list_display_links = ['nome', 'Cidade', 'Estado']
     # list_filter = ['nome', 'Cidade', 'Estado']
     list_per_page = 10  # lista 10 registrod=s na pagina
@@ -26,7 +26,7 @@ class MoradorInLine(admin.TabularInline):
 
 
 class BlocoAdmin(admin.ModelAdmin):
-    list_display = ['nome']
+    list_display = ['nome', 'get_Taxa_condominio', 'get_Fundo_reserva']
     inlines = [
         MoradorInLine
     ]
