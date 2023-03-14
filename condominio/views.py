@@ -11,7 +11,8 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, 'admin/')
+    # return render(request, 'admin/')
+    return render(request, 'accounts/login')
 
     # condominios = Condominio.objects.order_by('-id').filter(
     # mostrar=True
